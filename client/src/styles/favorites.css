@@ -1,0 +1,323 @@
+/* =========================================================
+   FAVORITES PAGE
+========================================================= */
+
+.favorites-page {
+  min-height: 70vh;
+  background-color: var(--th-bg-cream);
+  padding: 42px 24px 90px;
+  font-family: var(--font-sans);
+}
+
+.favorites-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.favorites-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 34px;
+}
+
+.favorites-heading-group {
+  max-width: 720px;
+}
+
+.favorites-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 12px;
+}
+
+.favorites-eyebrow-line {
+  width: 28px;
+  height: 1px;
+  background-color: var(--th-accent-terracotta);
+}
+
+.favorites-eyebrow-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--th-accent-terracotta);
+}
+
+.favorites-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 42px;
+  line-height: 1.1;
+  font-weight: 500;
+  color: var(--th-primary);
+}
+
+.favorites-description {
+  max-width: 620px;
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--th-text-body);
+}
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.favorites-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.favorites-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 13px;
+
+  border: 1px solid var(--th-border-card);
+  border-radius: 20px;
+
+  background-color: var(--th-surface-pure);
+
+  color: var(--th-primary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.favorites-count svg {
+  color: var(--th-accent-terracotta);
+}
+
+.favorites-clear-btn {
+  padding: 9px 13px;
+
+  border: 1px solid var(--th-border-card);
+  border-radius: 20px;
+
+  background-color: transparent;
+
+  color: var(--th-text-muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.favorites-clear-btn:hover {
+  color: var(--th-accent-terracotta);
+  border-color: var(--th-accent-terracotta);
+  background-color: var(--th-surface-pure);
+}
+
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.favorites-empty {
+  min-height: 420px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 24px;
+
+  text-align: center;
+
+  background-color: var(--th-surface-pure);
+  border: 1px solid var(--th-border-card);
+  border-radius: 14px;
+}
+
+.favorites-empty-icon {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  border-radius: 50%;
+
+  background-color: var(--th-bg-linen);
+  color: var(--th-accent-terracotta);
+}
+
+.favorites-empty-eyebrow {
+  margin-bottom: 8px;
+
+  color: var(--th-accent-terracotta);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.favorites-empty h2 {
+  margin: 0;
+
+  color: var(--th-primary);
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.favorites-empty p {
+  max-width: 440px;
+  margin: 9px 0 22px;
+
+  color: var(--th-text-body);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.favorites-shop-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 18px;
+
+  border-radius: 22px;
+
+  background-color: var(--th-primary);
+  color: var(--th-surface-pure);
+
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.favorites-shop-btn:hover {
+  background-color: var(--th-primary-dark);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   BOTTOM NAV
+========================================================= */
+
+.favorites-bottom-nav {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--th-border-subtle);
+}
+
+.favorites-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: var(--th-primary);
+
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: color 0.15s ease;
+}
+
+.favorites-back-link:hover {
+  color: var(--th-accent-terracotta);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+  .favorites-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .favorites-page {
+    padding: 34px 20px 70px;
+  }
+
+  .favorites-header {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 28px;
+  }
+
+  .favorites-title {
+    font-size: 36px;
+  }
+
+  .favorites-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .favorites-page {
+    padding: 28px 14px 60px;
+  }
+
+  .favorites-title {
+    font-size: 32px;
+  }
+
+  .favorites-description {
+    font-size: 13px;
+  }
+
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .favorites-empty {
+    min-height: 360px;
+    padding: 40px 18px;
+  }
+
+  .favorites-empty h2 {
+    font-size: 25px;
+  }
+
+  .favorites-header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

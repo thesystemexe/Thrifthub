@@ -1,0 +1,488 @@
+/* ============================================================
+   ThriftHub - Shipping Page
+============================================================ */
+
+.th-shipping-page {
+  min-height: calc(100vh - 140px);
+
+  padding: 40px 24px 80px;
+
+  background: var(--th-bg-cream);
+  color: var(--th-primary);
+}
+
+.th-shipping-container {
+  width: 100%;
+  max-width: 1050px;
+
+  margin: 0 auto;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.th-shipping-header {
+  margin-bottom: 32px;
+}
+
+.th-shipping-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 12px;
+
+  color: var(--th-accent);
+
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+}
+
+.th-shipping-header h1 {
+  margin: 0;
+
+  color: var(--th-primary);
+
+  font-family: var(--font-serif);
+  font-size: clamp(38px, 4vw, 48px);
+  font-weight: 500;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.02em;
+}
+
+.th-shipping-header h1 em {
+  color: var(--th-accent);
+  font-weight: 500;
+}
+
+.th-shipping-header p {
+  margin: 12px 0 0;
+
+  color: var(--th-text-muted);
+
+  font-family: var(--font-sans);
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+/* ============================================================
+   MAIN CARD
+============================================================ */
+
+.th-shipping-card {
+  overflow: hidden;
+
+  background: var(--th-surface-pure);
+
+  border: 1px solid var(--th-border-card);
+  border-radius: 14px;
+
+  box-shadow: 0 8px 26px rgba(30, 58, 47, 0.05);
+}
+
+/* ============================================================
+   SECTIONS
+============================================================ */
+
+.th-shipping-section {
+  padding: 30px 32px;
+
+  border-bottom: 1px solid var(--th-border-subtle);
+}
+
+.th-section-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 24px;
+}
+
+.th-section-number {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--th-primary);
+  color: var(--th-surface-pure);
+
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.th-section-heading h2 {
+  margin: 0 0 3px;
+
+  color: var(--th-primary);
+
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.th-section-heading p {
+  margin: 0;
+
+  color: var(--th-text-muted);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+/* ============================================================
+   FORM LAYOUT
+============================================================ */
+
+.th-form-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+.th-form-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.th-form-group-full {
+  grid-column: 1 / -1;
+
+  margin-bottom: 18px;
+}
+
+.th-form-group label {
+  color: var(--th-primary);
+
+  font-family: var(--font-sans);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.01em;
+}
+
+/* ============================================================
+   INPUTS
+============================================================ */
+
+.th-form-group input,
+.th-form-group select {
+  width: 100%;
+  height: 50px;
+
+  box-sizing: border-box;
+
+  padding: 0 15px;
+
+  border: 1px solid var(--th-border-card);
+  border-radius: 8px;
+
+  background: var(--th-bg-cream);
+
+  color: var(--th-primary);
+
+  font-family: var(--font-sans);
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.th-form-group input::placeholder {
+  color: var(--th-text-muted);
+  opacity: 0.8;
+}
+
+.th-form-group input:hover,
+.th-form-group select:hover {
+  border-color: rgba(30, 58, 47, 0.25);
+}
+
+.th-form-group input:focus,
+.th-form-group select:focus {
+  outline: none;
+
+  background: var(--th-surface-pure);
+
+  border-color: var(--th-primary);
+
+  box-shadow: 0 0 0 3px rgba(30, 58, 47, 0.06);
+}
+
+/* ============================================================
+   SELECT
+============================================================ */
+
+.th-form-group select {
+  cursor: pointer;
+}
+
+.th-form-group select:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.55;
+
+  background: var(--th-bg-cream);
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+.th-shipping-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding: 22px 32px;
+
+  background: #fcf8f4;
+}
+
+/* ============================================================
+   NOTE
+============================================================ */
+
+.th-shipping-note {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  max-width: 480px;
+}
+
+.th-shipping-note span {
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--th-primary);
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.th-shipping-note p {
+  margin: 0;
+
+  color: var(--th-text-muted);
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+/* ============================================================
+   SUBMIT BUTTON
+============================================================ */
+
+.th-shipping-submit {
+  min-width: 215px;
+  height: 50px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: var(--th-accent);
+
+  color: #ffffff;
+
+  font-family: var(--font-sans);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.th-shipping-submit span {
+  font-size: 18px;
+
+  line-height: 1;
+
+  transition: transform 0.2s ease;
+}
+
+.th-shipping-submit:hover {
+  background: var(--th-accent-hover);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 8px 20px rgba(200, 90, 50, 0.18);
+}
+
+.th-shipping-submit:hover span {
+  transform: translateX(3px);
+}
+
+.th-shipping-submit:active {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 768px) {
+  .th-shipping-page {
+    padding: 32px 18px 60px;
+  }
+
+  .th-shipping-header {
+    margin-bottom: 26px;
+  }
+
+  .th-shipping-section {
+    padding: 26px 24px;
+  }
+
+  .th-shipping-footer {
+    padding: 20px 24px;
+  }
+}
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 600px) {
+  .th-shipping-page {
+    padding: 28px 14px 50px;
+  }
+
+  .th-shipping-header {
+    margin-bottom: 24px;
+  }
+
+  .th-shipping-header h1 {
+    font-size: 38px;
+  }
+
+  .th-shipping-header p {
+    font-size: 13px;
+  }
+
+  .th-form-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .th-form-group-full {
+    grid-column: auto;
+
+    margin-bottom: 16px;
+  }
+
+  .th-shipping-section {
+    padding: 24px 20px;
+  }
+
+  .th-section-heading {
+    gap: 12px;
+
+    margin-bottom: 22px;
+  }
+
+  .th-section-number {
+    width: 34px;
+    height: 34px;
+  }
+
+  .th-section-heading h2 {
+    font-size: 16px;
+  }
+
+  .th-section-heading p {
+    font-size: 12px;
+  }
+
+  .th-form-group input,
+  .th-form-group select {
+    height: 48px;
+
+    font-size: 13px;
+  }
+
+  .th-shipping-footer {
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 20px;
+  }
+
+  .th-shipping-note {
+    max-width: none;
+  }
+
+  .th-shipping-submit {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   SMALL MOBILE
+============================================================ */
+
+@media (max-width: 400px) {
+  .th-shipping-header h1 {
+    font-size: 34px;
+  }
+
+  .th-shipping-section {
+    padding: 22px 18px;
+  }
+
+  .th-form-group input,
+  .th-form-group select {
+    height: 46px;
+  }
+}

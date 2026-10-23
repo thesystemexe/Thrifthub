@@ -1,0 +1,229 @@
+/* ============================================================
+   ThriftHub - Archival Editorial Footer
+============================================================ */
+
+.th-footer {
+  background-color: #0f2018; /* Obsidian Pine */
+  color: #faf5f0; /* Natural Linen */
+  font-family: var(--font-sans, "Plus Jakarta Sans", system-ui, sans-serif);
+  padding: 64px 0 0 0;
+  border-top: 1px solid rgba(255, 248, 244, 0.08);
+  position: relative;
+}
+
+.th-footer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px 48px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+@media (min-width: 900px) {
+  .th-footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+/* Brand Section */
+.th-footer-brand {
+  max-width: 360px;
+}
+
+.th-footer-logo {
+  font-family: var(--font-serif, "Playfair Display", Georgia, serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff8f4; /* Warm Archival Cream */
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.th-footer-logo .th-logo-dot {
+  color: #c85a32; /* Heritage Terracotta */
+}
+
+.th-footer-tagline {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(255, 248, 244, 0.7);
+  margin-bottom: 20px;
+}
+
+.th-footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(30, 58, 47, 0.5); /* Archival Forest Green Tint */
+  border: 1px solid rgba(74, 222, 128, 0.2); /* Emerald Mint Border */
+  border-radius: 20px;
+  font-size: 0.775rem;
+  font-weight: 500;
+  color: #4ade80; /* Emerald Mint */
+}
+
+.th-footer-badge .th-badge-icon {
+  flex-shrink: 0;
+}
+
+/* Navigation Columns */
+.th-footer-links-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+}
+
+@media (min-width: 640px) {
+  .th-footer-links-group {
+    gap: 64px;
+  }
+}
+
+.th-footer-column {
+  min-width: 140px;
+}
+
+.th-footer-column .th-column-title {
+  font-family: var(--font-serif, "Playfair Display", Georgia, serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff8f4;
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+
+.th-footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.th-footer-column li {
+  margin-bottom: 10px;
+}
+
+.th-footer-column a {
+  color: rgba(255, 248, 244, 0.65);
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+  display: inline-block;
+}
+
+.th-footer-column a:hover {
+  color: #c85a32; /* Heritage Terracotta Accent */
+  transform: translateX(2px);
+}
+
+/* Technical Telemetry Strip */
+.th-footer-meta-strip {
+  background-color: #12231c; /* Primary Darker */
+  border-top: 1px solid rgba(255, 248, 244, 0.05);
+  border-bottom: 1px solid rgba(255, 248, 244, 0.05);
+  padding: 10px 32px;
+}
+
+.th-meta-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.th-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 248, 244, 0.5);
+}
+
+.th-meta-item .th-meta-icon {
+  color: #c85a32;
+}
+
+.th-mono-text {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 0.725rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Bottom Copyright & Legal Bar */
+.th-footer-bottom {
+  padding: 24px 32px;
+  background-color: #0f2018;
+}
+
+.th-bottom-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.825rem;
+  color: rgba(255, 248, 244, 0.5);
+}
+
+@media (min-width: 768px) {
+  .th-bottom-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.th-copyright {
+  margin: 0;
+}
+
+.th-footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.th-footer-socials a {
+  color: rgba(255, 248, 244, 0.75);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.th-footer-socials a:hover {
+  color: #c85a32;
+}
+
+.th-footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.th-footer-legal a {
+  color: rgba(255, 248, 244, 0.5);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.th-footer-legal a:hover {
+  color: #fff8f4;
+}
+
+.th-footer-legal .th-divider {
+  color: rgba(255, 248, 244, 0.2);
+}

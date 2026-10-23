@@ -1,0 +1,915 @@
+/* =========================================================
+   PAGE
+========================================================= */
+
+.th-pdp-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 0 90px;
+  background-color: #fff8f4;
+  color: #1e3a2f;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.th-pdp-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.th-pdp-empty {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 50px 24px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid rgba(30, 58, 47, 0.1);
+  border-radius: 14px;
+}
+
+.th-pdp-empty h2 {
+  margin: 0 0 10px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 32px;
+}
+
+.th-pdp-empty p {
+  margin: 0;
+  color: rgba(30, 58, 47, 0.65);
+  font-size: 14px;
+}
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.th-pdp-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 52px;
+  align-items: start;
+  margin-bottom: 90px;
+}
+
+/* =========================================================
+   LEFT — GALLERY
+========================================================= */
+
+.th-gallery-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.th-main-stage {
+  position: relative;
+  width: 100%;
+  height: 590px;
+  overflow: hidden;
+  background-color: #f0eae4;
+  border: 1px solid rgba(30, 58, 47, 0.1);
+  border-radius: 16px;
+}
+
+.th-stage-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.th-main-stage:hover .th-stage-img {
+  transform: scale(1.015);
+}
+
+.th-no-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(30, 58, 47, 0.5);
+  font-size: 14px;
+}
+
+/* =========================================================
+   FAVORITE BUTTON
+========================================================= */
+
+.th-stage-fav-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  color: #1e3a2f;
+  cursor: pointer;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.09);
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.th-stage-fav-btn:hover {
+  transform: scale(1.05);
+}
+
+.th-stage-fav-btn.favorited {
+  color: #c85a32;
+}
+
+/* =========================================================
+   GALLERY ARROWS
+========================================================= */
+
+.th-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1e3a2f;
+  cursor: pointer;
+  transform: translateY(-50%);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.th-gallery-arrow:hover {
+  background: #1e3a2f;
+  color: #ffffff;
+}
+
+.th-gallery-arrow-left {
+  left: 16px;
+}
+
+.th-gallery-arrow-right {
+  right: 16px;
+}
+
+/* =========================================================
+   THUMBNAILS
+========================================================= */
+
+.th-thumb-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.th-thumb-btn {
+  height: 96px;
+  padding: 0;
+  overflow: hidden;
+  background: #eee7df;
+  border: 2px solid transparent;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.th-thumb-btn:hover {
+  border-color: rgba(200, 90, 50, 0.5);
+}
+
+.th-thumb-btn.active {
+  border-color: #c85a32;
+}
+
+.th-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* =========================================================
+   CONDITION AND FLAWS
+========================================================= */
+
+.th-flaws-card {
+  padding: 22px;
+  margin-top: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(30, 58, 47, 0.1);
+  border-radius: 12px;
+}
+
+.th-flaws-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.th-section-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #c85a32;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.th-flaws-title h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.th-grade-pill {
+  padding: 5px 9px;
+  border-radius: 4px;
+  background: rgba(30, 58, 47, 0.07);
+  color: #1e3a2f;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.th-flaws-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 0 17px;
+  padding-left: 18px;
+  color: rgba(30, 58, 47, 0.72);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.th-flaws-list li::marker {
+  color: #c85a32;
+}
+
+.th-flaws-text {
+  margin: 0 0 15px;
+  color: rgba(30, 58, 47, 0.7);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.th-audit-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.th-audit-tag {
+  padding: 5px 8px;
+  background: #faf5ef;
+  border: 1px solid rgba(30, 58, 47, 0.08);
+  border-radius: 4px;
+  color: #16a34a;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   RIGHT — PRODUCT DETAILS
+========================================================= */
+
+.th-details-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================================
+   BRAND / LOCATION
+========================================================= */
+
+.th-seller-meta-bar {
+  padding-bottom: 13px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid rgba(30, 58, 47, 0.09);
+}
+
+.th-seller-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.th-seller-name {
+  color: #1e3a2f;
+  font-weight: 700;
+}
+
+.th-seller-separator {
+  color: rgba(30, 58, 47, 0.4);
+}
+
+.th-seller-location {
+  color: rgba(30, 58, 47, 0.65);
+}
+
+/* =========================================================
+   BRAND AND TITLE
+========================================================= */
+
+.th-brand-tag {
+  display: block;
+  margin-bottom: 7px;
+  color: #c85a32;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.th-product-title {
+  margin: 0 0 16px;
+  color: #1e3a2f;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 40px;
+  line-height: 1.16;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.th-product-rating {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  color: rgba(30, 58, 47, 0.62);
+  font-size: 12px;
+}
+
+.th-rating-divider {
+  color: rgba(30, 58, 47, 0.3);
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.th-product-description {
+  margin: 0 0 24px;
+  color: rgba(30, 58, 47, 0.72);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.th-pricing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  margin-bottom: 22px;
+  background: #ffffff;
+  border: 1px solid rgba(30, 58, 47, 0.1);
+  border-radius: 12px;
+}
+
+.th-price-label {
+  margin-bottom: 5px;
+  color: rgba(30, 58, 47, 0.5);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.th-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.th-price-currency {
+  color: #c85a32;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.th-price-now {
+  color: #1e3a2f;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.th-price-note {
+  margin-top: 5px;
+  color: rgba(30, 58, 47, 0.48);
+  font-size: 11px;
+}
+
+/* =========================================================
+   PRODUCT SPECS
+========================================================= */
+
+.th-product-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 20px;
+  border-top: 1px solid rgba(30, 58, 47, 0.08);
+  border-left: 1px solid rgba(30, 58, 47, 0.08);
+}
+
+.th-spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 13px 14px;
+  border-right: 1px solid rgba(30, 58, 47, 0.08);
+  border-bottom: 1px solid rgba(30, 58, 47, 0.08);
+}
+
+.th-spec-item span {
+  color: rgba(30, 58, 47, 0.48);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.th-spec-item strong {
+  color: #1e3a2f;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   STOCK
+========================================================= */
+
+.th-stock-status {
+  margin-bottom: 14px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.in-stock {
+  color: #16a34a;
+}
+
+.out-of-stock {
+  color: #dc2626;
+}
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+
+.th-quantity-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.th-quantity-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.th-quantity-control {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(30, 58, 47, 0.15);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.th-quantity-control button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: #1e3a2f;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.th-quantity-control button:hover:not(:disabled) {
+  background: #f5eee8;
+}
+
+.th-quantity-control button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.th-quantity-control span {
+  min-width: 38px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   BUY AND ADD TO BAG BUTTONS
+========================================================= */
+
+.th-action-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.th-btn-buy,
+.th-btn-bag {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 16px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.th-btn-buy {
+  border: 1px solid #c85a32;
+  background: #c85a32;
+  color: #ffffff;
+}
+
+.th-btn-buy:hover:not(:disabled) {
+  background: #a8421e;
+  border-color: #a8421e;
+  transform: translateY(-1px);
+}
+
+.th-btn-bag {
+  border: 1px solid #1e3a2f;
+  background: transparent;
+  color: #1e3a2f;
+}
+
+.th-btn-bag:hover:not(:disabled) {
+  background: #1e3a2f;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.th-btn-buy:disabled,
+.th-btn-bag:disabled {
+  background: #aaa;
+  border-color: #aaa;
+  color: #ffffff;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.th-information-box {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(30, 58, 47, 0.09);
+}
+
+.th-information-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(30, 58, 47, 0.07);
+  font-size: 12px;
+}
+
+.th-information-item span {
+  color: rgba(30, 58, 47, 0.5);
+}
+
+.th-information-item strong {
+  text-align: right;
+  color: #1e3a2f;
+  font-weight: 600;
+}
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+.th-reviews-section {
+  padding-top: 65px;
+  border-top: 1px solid rgba(30, 58, 47, 0.1);
+}
+
+.th-reviews-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 34px;
+}
+
+.th-reviews-eyebrow {
+  color: #c85a32;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.th-reviews-header h2 {
+  margin: 6px 0 0;
+  color: #1e3a2f;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 30px;
+}
+
+.th-review-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(30, 58, 47, 0.6);
+  font-size: 12px;
+}
+
+/* =========================================================
+   REVIEWS GRID
+========================================================= */
+
+.th-reviews-grid {
+  display: grid;
+  grid-template-columns: 0.42fr 0.58fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.th-review-form-col {
+  position: sticky;
+  top: 24px;
+}
+
+/* =========================================================
+   REVIEW FORM
+========================================================= */
+
+.th-review-form {
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid rgba(30, 58, 47, 0.1);
+  border-radius: 12px;
+}
+
+.th-review-form h3 {
+  margin: 0 0 18px;
+  color: #1e3a2f;
+  font-size: 16px;
+}
+
+.th-write-rating {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.th-review-input {
+  width: 100%;
+  min-height: 120px;
+  box-sizing: border-box;
+  padding: 13px;
+  margin-bottom: 13px;
+  resize: vertical;
+  outline: none;
+  background: #fffaf7;
+  border: 1px solid rgba(30, 58, 47, 0.12);
+  border-radius: 8px;
+  color: #1e3a2f;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+}
+
+.th-review-input:focus {
+  border-color: #c85a32;
+}
+
+.th-submit-review {
+  width: 100%;
+  padding: 11px 17px;
+  border: none;
+  border-radius: 7px;
+  background: #1e3a2f;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.th-submit-review:hover {
+  background: #12231c;
+}
+
+/* =========================================================
+   REVIEW FEED
+========================================================= */
+
+.th-review-feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.th-review-item {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid rgba(30, 58, 47, 0.1);
+  border-radius: 10px;
+}
+
+.th-review-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 13px;
+}
+
+.th-review-name {
+  color: #1e3a2f;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.th-review-comment {
+  margin: 0;
+  color: rgba(30, 58, 47, 0.75);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.th-no-reviews {
+  padding: 40px 20px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px dashed rgba(30, 58, 47, 0.15);
+  border-radius: 12px;
+}
+
+.th-no-reviews h3 {
+  margin: 0 0 6px;
+  color: #1e3a2f;
+  font-size: 16px;
+}
+
+.th-no-reviews p {
+  margin: 0;
+  color: rgba(30, 58, 47, 0.6);
+  font-size: 13px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+  .th-pdp-grid {
+    gap: 32px;
+  }
+
+  .th-product-title {
+    font-size: 34px;
+  }
+
+  .th-main-stage {
+    height: 520px;
+  }
+}
+
+@media (max-width: 992px) {
+  .th-pdp-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .th-main-stage {
+    height: 650px;
+  }
+
+  .th-details-col {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 868px) {
+  .th-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .th-review-form-col {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .th-pdp-wrapper {
+    padding-top: 24px;
+  }
+
+  .th-pdp-container {
+    padding: 0 16px;
+  }
+
+  .th-main-stage {
+    height: 470px;
+  }
+
+  .th-product-title {
+    font-size: 30px;
+  }
+
+  .th-price-now {
+    font-size: 32px;
+  }
+
+  .th-action-group {
+    grid-template-columns: 1fr;
+  }
+
+  .th-reviews-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .th-reviews-header h2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 420px) {
+  .th-main-stage {
+    height: 390px;
+  }
+
+  .th-thumb-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .th-thumb-btn {
+    height: 80px;
+  }
+
+  .th-product-title {
+    font-size: 27px;
+  }
+
+  .th-product-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .th-flaws-card,
+  .th-review-form {
+    padding: 18px;
+  }
+}

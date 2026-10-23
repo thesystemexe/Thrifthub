@@ -1,0 +1,69 @@
+/* 1. Import Fonts First */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+/* 2. Global Reset (Use 0 instead of 0%) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 3. CSS Variables */
+:root {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  background-image: linear-gradient(to right, #fef7f3 0%, #fef7f3 100%);
+  --th-primary: #1e3a2f;
+  --th-primary-dark: #12231c;
+  --th-accent: #c85a32;
+  --th-accent-terracotta: #c85a32;
+  --th-accent-hover: #a8421e;
+
+  --th-bg-cream: #fff8f4;
+  --th-bg-linen: #faf5f0;
+  --th-bg-ecru: #f5efeb;
+  --th-surface-pure: #ffffff;
+
+  --th-border-subtle: rgba(30, 58, 47, 0.08);
+  --th-border-card: rgba(30, 58, 47, 0.12);
+  --th-text-body: rgba(30, 58, 47, 0.78);
+  --th-text-muted: rgba(30, 58, 47, 0.55);
+
+  --primary-main: #6c5b7b;
+  --primary-dark: #4e4a59;
+  --primary-light: #f8b5b1;
+
+  --bg-primary: #2e2e3c;
+  --bg-secondary: #3b3b4f;
+
+  --text-primary: #eae7e0;
+  --text-secondary: #b9a7a0;
+  --text-light: #ffffff;
+
+  --border-color: #5c4a6f;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+}
+
+/* 4. Base Styles */
+html,
+body {
+  min-height: 100vh;
+  background-color: #fef7f3;
+  font-family: var(--font-sans);
+}
+
+/* Font utility classes */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}

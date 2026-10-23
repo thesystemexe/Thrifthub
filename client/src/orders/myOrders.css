@@ -1,0 +1,660 @@
+/* ============================================================
+   ThriftHub - My Orders / Order History
+============================================================ */
+
+.th-orders-page {
+  width: 100%;
+  min-height: 80vh;
+  background: var(--th-bg-cream);
+  color: var(--th-primary);
+  padding-bottom: 80px;
+}
+
+.th-orders-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================================
+   Header
+============================================================ */
+
+.th-orders-header {
+  background: linear-gradient(
+    180deg,
+    var(--th-bg-cream) 0%,
+    var(--th-bg-linen) 100%
+  );
+
+  border-bottom: 1px solid var(--th-border-subtle);
+  padding: 42px 0 28px;
+  margin-bottom: 32px;
+}
+
+.th-header-main {
+  margin-bottom: 28px;
+}
+
+.th-vault-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 9px;
+
+  color: var(--th-accent);
+
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.th-orders-title {
+  margin: 0 0 7px;
+
+  color: var(--th-primary);
+
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.th-orders-subtitle {
+  margin: 0;
+
+  max-width: 650px;
+
+  color: var(--th-text-body);
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   Tabs
+============================================================ */
+
+.th-orders-tabs-row {
+  margin-bottom: 20px;
+}
+
+.th-orders-tabs {
+  display: flex;
+  gap: 8px;
+
+  overflow-x: auto;
+
+  padding-bottom: 4px;
+
+  scrollbar-width: none;
+}
+
+.th-orders-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.th-tab-btn {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 9px 16px;
+
+  border: 1px solid var(--th-border-card);
+  border-radius: 999px;
+
+  background: var(--th-bg-cream);
+
+  color: var(--th-text-body);
+
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.th-tab-btn:hover {
+  background: var(--th-surface-pure);
+  color: var(--th-primary);
+}
+
+.th-tab-btn.active {
+  background: var(--th-primary);
+  border-color: var(--th-primary);
+
+  color: #ffffff;
+}
+
+/* ============================================================
+   Search
+============================================================ */
+
+.th-search-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.th-orders-search-box {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  padding: 10px 13px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--th-border-card);
+  border-radius: 8px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.th-orders-search-box:focus-within {
+  border-color: rgba(200, 90, 50, 0.4);
+
+  box-shadow: 0 0 0 3px rgba(200, 90, 50, 0.07);
+}
+
+.th-search-icon {
+  flex-shrink: 0;
+
+  margin-right: 9px;
+
+  color: var(--th-text-muted);
+}
+
+.th-orders-input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--th-primary);
+
+  font-family: var(--font-sans);
+  font-size: 13px;
+}
+
+.th-orders-input::placeholder {
+  color: var(--th-text-muted);
+}
+
+/* ============================================================
+   Orders Stream
+============================================================ */
+
+.th-orders-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 100%;
+}
+
+/* ============================================================
+   Order Card
+============================================================ */
+
+.th-order-card {
+  width: 100%;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid var(--th-border-card);
+  border-radius: 14px;
+
+  box-shadow: 0 4px 16px rgba(30, 58, 47, 0.035);
+
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.th-order-card:hover {
+  box-shadow: 0 8px 24px rgba(30, 58, 47, 0.07);
+}
+
+/* ============================================================
+   Order Header
+============================================================ */
+
+.th-order-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  padding: 13px 20px;
+
+  background: var(--th-bg-linen);
+
+  border-bottom: 1px solid var(--th-border-subtle);
+}
+
+.th-header-meta-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  color: var(--th-text-body);
+
+  font-size: 12px;
+}
+
+.th-order-num {
+  color: var(--th-primary);
+
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.th-item-count {
+  color: var(--th-text-muted);
+}
+
+.th-bullet {
+  opacity: 0.4;
+}
+
+.th-header-meta-right {
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   Status
+============================================================ */
+
+.th-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.th-status-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+}
+
+.th-status-pill.active {
+  background: rgba(200, 90, 50, 0.1);
+  color: var(--th-accent);
+}
+
+.th-status-pill.transit {
+  background: rgba(22, 163, 74, 0.1);
+  color: #15803d;
+}
+
+.th-status-pill.completed {
+  background: rgba(22, 163, 74, 0.1);
+  color: #15803d;
+}
+
+.th-status-pill.returns {
+  background: rgba(200, 90, 50, 0.1);
+  color: var(--th-accent);
+}
+
+/* ============================================================
+   Order Body
+============================================================ */
+
+.th-order-body {
+  padding: 24px 20px;
+}
+
+.th-order-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 16px;
+}
+
+.th-order-info-block {
+  min-width: 0;
+
+  padding-right: 16px;
+
+  border-right: 1px solid var(--th-border-subtle);
+}
+
+.th-order-info-block:last-child {
+  border-right: none;
+}
+
+.th-info-label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--th-text-muted);
+
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+}
+
+.th-order-info-block strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: var(--th-primary);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.th-order-info-block:first-child strong {
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.th-order-info-block.total strong {
+  font-family: var(--font-mono);
+  font-size: 17px;
+}
+
+.th-status-text {
+  text-transform: capitalize;
+}
+
+/* ============================================================
+   Order Footer
+============================================================ */
+
+.th-order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  padding: 14px 20px;
+
+  background: var(--th-bg-linen);
+
+  border-top: 1px solid var(--th-border-subtle);
+}
+
+.th-order-footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.th-footer-label {
+  color: var(--th-accent);
+
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+}
+
+.th-footer-text {
+  color: var(--th-text-muted);
+
+  font-size: 11px;
+}
+
+/* ============================================================
+   Buttons
+============================================================ */
+
+.th-btn-primary-filter,
+.th-btn-secondary-view {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 9px 14px;
+
+  border-radius: 6px;
+
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.th-btn-primary-filter {
+  border: none;
+  background: var(--th-accent);
+  color: #ffffff;
+}
+
+.th-btn-primary-filter:hover {
+  background: var(--th-accent-hover);
+}
+
+.th-btn-secondary-view {
+  border: 1px solid var(--th-border-card);
+
+  background: #ffffff;
+
+  color: var(--th-primary);
+}
+
+.th-btn-secondary-view:hover {
+  background: var(--th-bg-linen);
+
+  border-color: rgba(30, 58, 47, 0.2);
+}
+
+/* ============================================================
+   Empty State
+============================================================ */
+
+.th-empty-orders {
+  min-height: 420px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--th-border-card);
+  border-radius: 14px;
+
+  text-align: center;
+}
+
+.th-empty-icon {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  border-radius: 50%;
+
+  background: rgba(200, 90, 50, 0.09);
+
+  color: var(--th-accent);
+}
+
+.th-empty-orders h2 {
+  margin: 0 0 7px;
+
+  color: var(--th-primary);
+
+  font-family: var(--font-serif);
+  font-size: 24px;
+}
+
+.th-empty-orders p {
+  max-width: 420px;
+
+  margin: 0 0 20px;
+
+  color: var(--th-text-muted);
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   Responsive
+============================================================ */
+
+@media (max-width: 900px) {
+  .th-order-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .th-order-info-block:nth-child(2) {
+    border-right: none;
+  }
+
+  .th-order-info-block:nth-child(-n + 2) {
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--th-border-subtle);
+  }
+
+  .th-order-info-block:nth-child(3),
+  .th-order-info-block:nth-child(4) {
+    padding-top: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .th-orders-container {
+    padding: 0 16px;
+  }
+
+  .th-orders-header {
+    padding: 32px 0 22px;
+  }
+
+  .th-orders-title {
+    font-size: 30px;
+  }
+
+  .th-orders-subtitle {
+    font-size: 13px;
+  }
+
+  .th-order-card-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .th-header-meta-right {
+    width: 100%;
+  }
+
+  .th-status-pill {
+    width: fit-content;
+  }
+
+  .th-order-info-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .th-order-info-block {
+    padding: 13px 0;
+
+    border-right: none;
+    border-bottom: 1px solid var(--th-border-subtle);
+  }
+
+  .th-order-info-block:first-child {
+    padding-top: 0;
+  }
+
+  .th-order-info-block:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .th-order-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .th-btn-secondary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .th-orders-title {
+    font-size: 26px;
+  }
+
+  .th-order-body {
+    padding: 20px 16px;
+  }
+
+  .th-order-card-header,
+  .th-order-footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .th-empty-orders {
+    min-height: 350px;
+    padding: 30px 20px;
+  }
+}

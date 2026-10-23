@@ -1,0 +1,723 @@
+/* ============================================================ ThriftHub - Seller Verification Detail Page Uses only variables from index.css ============================================================ */
+.seller-verification-page {
+  min-height: calc(100vh - 64px);
+  padding: 32px;
+  background: var(--th-bg-cream);
+  color: var(--th-primary);
+  font-family: var(--font-sans);
+} /* ============================================================ PAGE HEADER ============================================================ */
+.verification-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+.verification-header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  min-width: 0;
+}
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  padding: 9px 14px;
+  background: var(--th-surface-pure);
+  border: 1px solid var(--th-border-card);
+  border-radius: 8px;
+  color: var(--th-primary);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+.back-btn:hover {
+  background: var(--th-primary);
+  border-color: var(--th-primary);
+  color: var(--th-bg-cream);
+  transform: translateX(-2px);
+}
+.header-title {
+  min-width: 0;
+}
+.eyebrow,
+.card-eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--th-text-muted);
+}
+.header-title h1 {
+  margin: 4px 0 5px;
+  font-family: var(--font-serif);
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--th-primary);
+}
+.header-title p {
+  max-width: 680px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--th-text-body);
+} /* ============================================================ STATUS ============================================================ */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--th-border-card);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.status-badge.pending {
+  background: var(--th-bg-linen);
+  color: var(--th-accent);
+  border-color: var(--th-accent);
+}
+.status-badge.approved {
+  background: var(--th-bg-linen);
+  color: var(--th-primary);
+  border-color: var(--th-primary);
+}
+.status-badge.rejected {
+  background: var(--th-bg-ecru);
+  color: var(--th-accent-hover);
+  border-color: var(--th-accent);
+} /* ============================================================ MAIN LAYOUT ============================================================ */
+.verification-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(340px, 0.9fr);
+  gap: 24px;
+  align-items: start;
+}
+.verification-main,
+.verification-sidebar {
+  min-width: 0;
+} /* ============================================================ CARDS ============================================================ */
+.verification-card {
+  margin-bottom: 20px;
+  padding: 24px;
+  background: var(--th-surface-pure);
+  border: 1px solid var(--th-border-card);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+}
+.verification-card:last-child {
+  margin-bottom: 0;
+}
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.section-heading h3,
+.decision-header h3,
+.decision-result-card h3,
+.rejection-heading h3 {
+  margin: 3px 0 0;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--th-primary);
+} /* ============================================================ STORE CARD ============================================================ */
+.store-overview {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.store-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: var(--th-bg-linen);
+  color: var(--th-primary);
+}
+.store-overview-content {
+  min-width: 0;
+}
+.store-overview-content h2 {
+  margin: 4px 0 6px;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--th-primary);
+}
+.owner-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--th-text-muted);
+} /* ============================================================ DESCRIPTION ============================================================ */
+.description-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--th-text-body);
+} /* ============================================================ BUSINESS INFORMATION ============================================================ */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 4px;
+}
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: var(--th-bg-linen);
+  color: var(--th-primary);
+}
+.info-content {
+  min-width: 0;
+}
+.info-label {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--th-text-muted);
+}
+.info-value {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.55;
+  font-weight: 600;
+  color: var(--th-primary);
+  overflow-wrap: anywhere;
+} /* ============================================================ DOCUMENTS ============================================================ */
+.section-description {
+  margin: -8px 0 18px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--th-text-muted);
+}
+.document-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 7px;
+  background: var(--th-bg-linen);
+  color: var(--th-primary);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+}
+.documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.document-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  background: var(--th-bg-linen);
+  border: 1px solid var(--th-border-subtle);
+  border-radius: 10px;
+}
+.document-main {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+.document-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--th-surface-pure);
+  color: var(--th-primary);
+}
+.document-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.document-type {
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: var(--th-primary);
+  text-transform: capitalize;
+  overflow-wrap: anywhere;
+}
+.document-sub {
+  margin-top: 2px;
+  font-size: 10px;
+  color: var(--th-text-muted);
+}
+.document-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.document-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 31px;
+  height: 31px;
+  border: 1px solid var(--th-border-card);
+  border-radius: 7px;
+  background: var(--th-surface-pure);
+  color: var(--th-primary);
+  text-decoration: none;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease;
+}
+.document-btn:hover {
+  background: var(--th-primary);
+  border-color: var(--th-primary);
+  color: var(--th-bg-cream);
+}
+.empty-documents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  padding: 24px;
+  border: 1px dashed var(--th-border-card);
+  border-radius: 10px;
+  color: var(--th-text-muted);
+  text-align: center;
+}
+.empty-documents p {
+  margin: 10px 0 0;
+  font-size: 12px;
+} /* ============================================================ DECISION CARD ============================================================ */
+.decision-card {
+  border-color: var(--th-border-card);
+}
+.decision-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.decision-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: var(--th-bg-linen);
+  color: var(--th-primary);
+}
+.decision-description {
+  margin: 16px 0 18px;
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--th-text-muted);
+}
+.decision-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+.approve-btn,
+.reject-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+.approve-btn {
+  background: var(--th-primary);
+  border: 1px solid var(--th-primary);
+  color: var(--th-bg-cream);
+}
+.approve-btn:hover:not(:disabled) {
+  background: var(--th-primary-dark);
+  border-color: var(--th-primary-dark);
+  transform: translateY(-1px);
+}
+.reject-btn {
+  background: var(--th-surface-pure);
+  border: 1px solid var(--th-accent);
+  color: var(--th-accent);
+}
+.reject-btn:hover:not(:disabled) {
+  background: var(--th-accent);
+  border-color: var(--th-accent);
+  color: var(--th-bg-cream);
+  transform: translateY(-1px);
+}
+.approve-btn:disabled,
+.reject-btn:disabled,
+.cancel-btn:disabled,
+.confirm-reject-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+} /* ============================================================ REJECTION FORM ============================================================ */
+.reject-form {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--th-border-subtle);
+}
+.reject-form-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-bottom: 16px;
+  color: var(--th-accent);
+}
+.reject-form-header h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--th-primary);
+}
+.reject-form-header p {
+  margin: 4px 0 0;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--th-text-muted);
+}
+.reason-container label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--th-primary);
+}
+.reason-container textarea {
+  display: block;
+  width: 100%;
+  min-height: 105px;
+  padding: 11px 12px;
+  background: var(--th-bg-cream);
+  border: 1px solid var(--th-border-card);
+  border-radius: 8px;
+  color: var(--th-primary);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.55;
+  outline: none;
+  resize: vertical;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.reason-container textarea::placeholder {
+  color: var(--th-text-muted);
+}
+.reason-container textarea:focus {
+  border-color: var(--th-accent);
+  box-shadow: 0 0 0 3px var(--th-border-subtle);
+}
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+.cancel-btn,
+.confirm-reject-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 8px 13px;
+  border-radius: 7px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease;
+}
+.cancel-btn {
+  background: var(--th-surface-pure);
+  border: 1px solid var(--th-border-card);
+  color: var(--th-primary);
+}
+.cancel-btn:hover:not(:disabled) {
+  background: var(--th-bg-linen);
+}
+.confirm-reject-btn {
+  background: var(--th-accent);
+  border: 1px solid var(--th-accent);
+  color: var(--th-bg-cream);
+}
+.confirm-reject-btn:hover:not(:disabled) {
+  background: var(--th-accent-hover);
+  border-color: var(--th-accent-hover);
+} /* ============================================================ DECISION RESULT ============================================================ */
+.decision-result-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.decision-result-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 9px;
+}
+.decision-result-icon.approved {
+  background: var(--th-bg-linen);
+  color: var(--th-primary);
+}
+.decision-result-icon.rejected {
+  background: var(--th-bg-ecru);
+  color: var(--th-accent);
+}
+.decision-result-card p {
+  margin: 6px 0 0;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--th-text-muted);
+} /* ============================================================ REJECTION INFORMATION ============================================================ */
+.rejection-info-card {
+  border-left: 3px solid var(--th-accent);
+}
+.rejection-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: var(--th-accent);
+}
+.rejection-info-card p {
+  margin: 14px 0 0;
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--th-text-body);
+} /* ============================================================ LOADING / ERROR STATES ============================================================ */
+.verification-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  text-align: center;
+}
+.verification-state h2 {
+  margin: 16px 0 6px;
+  font-family: var(--font-serif);
+  font-size: 21px;
+  color: var(--th-primary);
+}
+.verification-state p {
+  max-width: 420px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--th-text-muted);
+}
+.verification-spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid var(--th-border-card);
+  border-top-color: var(--th-primary);
+  border-radius: 50%;
+  animation: sellerVerificationSpin 0.8s linear infinite;
+}
+@keyframes sellerVerificationSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.state-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+}
+.error-icon {
+  background: var(--th-bg-ecru);
+  color: var(--th-accent);
+}
+.state-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 18px;
+  padding: 9px 14px;
+  background: var(--th-primary);
+  border: 1px solid var(--th-primary);
+  border-radius: 8px;
+  color: var(--th-bg-cream);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease;
+}
+.state-back-btn:hover {
+  background: var(--th-primary-dark);
+  border-color: var(--th-primary-dark);
+} /* ============================================================ RESPONSIVE ============================================================ */
+@media (max-width: 1100px) {
+  .verification-layout {
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.9fr);
+    gap: 18px;
+  }
+  .seller-verification-page {
+    padding: 24px;
+  }
+}
+@media (max-width: 900px) {
+  .verification-layout {
+    grid-template-columns: 1fr;
+  }
+  .verification-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+  .verification-sidebar .verification-card {
+    margin-bottom: 0;
+  }
+  .verification-header {
+    align-items: flex-start;
+  }
+}
+@media (max-width: 680px) {
+  .seller-verification-page {
+    padding: 18px;
+  }
+  .verification-header {
+    flex-direction: column;
+  }
+  .verification-header-left {
+    width: 100%;
+  }
+  .status-badge {
+    align-self: flex-start;
+  }
+  .header-title h1 {
+    font-size: 24px;
+  }
+  .verification-sidebar {
+    display: block;
+  }
+  .verification-sidebar .verification-card {
+    margin-bottom: 18px;
+  }
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  .decision-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 500px) {
+  .seller-verification-page {
+    padding: 14px;
+  }
+  .verification-header-left {
+    gap: 11px;
+  }
+  .back-btn span {
+    display: none;
+  }
+  .back-btn {
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+    padding: 0;
+  }
+  .header-title h1 {
+    font-size: 21px;
+  }
+  .verification-card {
+    padding: 18px;
+  }
+  .store-overview {
+    align-items: flex-start;
+  }
+  .store-icon-wrapper {
+    width: 48px;
+    height: 48px;
+  }
+  .store-overview-content h2 {
+    font-size: 18px;
+  }
+  .document-item {
+    align-items: flex-start;
+  }
+  .document-actions {
+    flex-direction: column;
+  }
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+  .cancel-btn,
+  .confirm-reject-btn {
+    width: 100%;
+  }
+}

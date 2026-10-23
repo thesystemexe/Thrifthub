@@ -1,0 +1,433 @@
+/* =========================================================
+   THRIFTHUB PAYMENT PAGE
+   ========================================================= */
+
+.payment-container {
+  min-height: calc(100vh - 190px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 60px 24px 90px;
+
+  background: var(--th-bg-cream);
+}
+
+/* =========================================================
+   PAYMENT CARD
+   ========================================================= */
+
+.payment-box {
+  width: 100%;
+  max-width: 620px;
+
+  padding: 46px;
+
+  background: var(--th-surface-pure);
+
+  border: 1px solid var(--th-border-card);
+
+  box-shadow:
+    0 20px 55px rgba(18, 35, 28, 0.08),
+    0 3px 10px rgba(18, 35, 28, 0.03);
+
+  position: relative;
+}
+
+/* Top accent */
+
+.payment-box::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 4px;
+
+  background: var(--th-accent);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.payment-header {
+  text-align: center;
+
+  margin-bottom: 34px;
+}
+
+.payment-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: var(--th-accent);
+
+  font-family: var(--font-sans);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.payment-header h1 {
+  margin: 0 0 12px;
+
+  color: var(--th-primary-dark);
+
+  font-family: var(--font-serif);
+
+  font-size: 38px;
+
+  font-weight: 500;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.6px;
+}
+
+.payment-header p {
+  max-width: 430px;
+
+  margin: 0 auto;
+
+  color: var(--th-text-muted);
+
+  font-family: var(--font-sans);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   PAYMENT SUMMARY
+   ========================================================= */
+
+.payment-summary {
+  padding: 24px;
+
+  background: var(--th-bg-linen);
+
+  border: 1px solid var(--th-border-subtle);
+}
+
+/* Individual rows */
+
+.payment-summary-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 9px 0;
+
+  color: var(--th-text-body);
+
+  font-family: var(--font-sans);
+
+  font-size: 14px;
+}
+
+.payment-summary-row span:last-child {
+  color: var(--th-primary-dark);
+
+  font-weight: 600;
+}
+
+/* Divider */
+
+.payment-divider {
+  height: 1px;
+
+  margin: 14px 0;
+
+  background: var(--th-border-subtle);
+}
+
+/* =========================================================
+   TOTAL
+   ========================================================= */
+
+.payment-total-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.payment-total-row > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.payment-total-row span {
+  color: var(--th-primary-dark);
+
+  font-family: var(--font-sans);
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+.payment-total-row small {
+  color: var(--th-text-muted);
+
+  font-family: var(--font-sans);
+
+  font-size: 11px;
+}
+
+.payment-total-row strong {
+  color: var(--th-accent);
+
+  font-family: var(--font-serif);
+
+  font-size: 28px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   SECURITY BOX
+   ========================================================= */
+
+.payment-security {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin: 25px 0;
+
+  padding: 15px 17px;
+
+  background: rgba(30, 58, 47, 0.045);
+
+  border: 1px solid rgba(30, 58, 47, 0.1);
+}
+
+.payment-security-icon {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--th-primary);
+
+  color: white;
+
+  font-family: var(--font-sans);
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.payment-security div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.payment-security strong {
+  color: var(--th-primary-dark);
+
+  font-family: var(--font-sans);
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.payment-security span {
+  color: var(--th-text-muted);
+
+  font-family: var(--font-sans);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   PAY BUTTON
+   ========================================================= */
+
+.payment-button {
+  width: 100%;
+
+  min-height: 56px;
+
+  border: none;
+
+  border-radius: 2px;
+
+  background: var(--th-primary);
+
+  color: var(--th-surface-pure);
+
+  font-family: var(--font-sans);
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.payment-button:hover:not(:disabled) {
+  background: var(--th-primary-dark);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 10px 25px rgba(30, 58, 47, 0.18);
+}
+
+.payment-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.payment-button:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   PAYMENT LOADING
+========================================================= */
+
+.payment-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  padding: 42px 20px;
+
+  color: var(--th-text-muted);
+
+  font-size: 14px;
+}
+
+.payment-spinner {
+  width: 32px;
+  height: 32px;
+
+  border: 3px solid var(--th-bg-ecru);
+
+  border-top-color: var(--th-primary);
+
+  border-radius: 50%;
+
+  animation: paymentSpin 0.8s linear infinite;
+}
+
+@keyframes paymentSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   NOTE
+   ========================================================= */
+
+.payment-note {
+  margin: 13px 0 0;
+
+  text-align: center;
+
+  color: var(--th-text-muted);
+
+  font-family: var(--font-sans);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .payment-container {
+    padding: 40px 18px 70px;
+  }
+
+  .payment-box {
+    padding: 35px 25px;
+  }
+
+  .payment-header h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-container {
+    padding: 25px 14px 55px;
+  }
+
+  .payment-box {
+    padding: 30px 18px;
+  }
+
+  .payment-header h1 {
+    font-size: 28px;
+  }
+
+  .payment-summary {
+    padding: 19px 16px;
+  }
+
+  .payment-total-row strong {
+    font-size: 24px;
+  }
+
+  .payment-security {
+    align-items: flex-start;
+  }
+}

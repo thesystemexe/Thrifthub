@@ -1,0 +1,43 @@
+.rating-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.rating-star {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    transform 0.15s ease;
+  color: var(--th-border-card, #e0e0e0);
+}
+
+.rating-star.filled {
+  color: var(--th-accent-terracotta, #c85a32);
+}
+
+.rating-star.empty {
+  color: var(--th-text-muted, rgba(30, 58, 47, 0.3));
+}
+
+.rating-star:not(:disabled):hover {
+  transform: scale(1.15);
+  color: var(--th-accent-hover, #a8421e);
+}
+
+.rating-star:disabled {
+  cursor: default;
+}
+
+.productCardSpan {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--th-text-muted);
+  margin-left: 4px;
+}

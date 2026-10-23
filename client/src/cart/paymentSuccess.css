@@ -1,0 +1,259 @@
+/* =========================================================
+   PAYMENT SUCCESS
+========================================================= */
+
+.payment-success-container {
+  min-height: calc(100vh - 140px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 24px 90px;
+
+  background: var(--th-bg-cream);
+
+  font-family: var(--font-sans);
+}
+
+/* =========================================================
+   SUCCESS BOX
+========================================================= */
+
+.payment-success-box {
+  width: 100%;
+  max-width: 620px;
+
+  padding: 52px 42px;
+
+  background: var(--th-surface-pure);
+
+  border: 1px solid var(--th-border-card);
+
+  border-radius: 14px;
+
+  text-align: center;
+
+  box-shadow: 0 14px 40px rgba(18, 35, 28, 0.08);
+}
+
+/* =========================================================
+   SUCCESS ICON
+========================================================= */
+
+.success-icon {
+  width: 84px;
+  height: 84px;
+
+  margin: 0 auto 24px;
+
+  border-radius: 50%;
+
+  background: var(--th-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-icon span {
+  color: #ffffff;
+
+  font-size: 48px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.payment-success-box h1 {
+  margin: 0 0 12px;
+
+  color: var(--th-primary);
+
+  font-family: var(--font-serif);
+
+  font-size: 42px;
+  font-weight: 500;
+
+  line-height: 1.15;
+}
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.payment-success-box > p {
+  max-width: 500px;
+
+  margin: 0 auto;
+
+  color: var(--th-text-muted);
+
+  font-family: var(--font-sans);
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   PAYMENT REFERENCE
+========================================================= */
+
+.reference-box {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  margin: 28px auto 0;
+
+  padding: 16px 18px;
+
+  max-width: 470px;
+
+  background: var(--th-bg-linen);
+
+  border: 1px solid var(--th-border-subtle);
+
+  border-radius: 9px;
+}
+
+.reference-box span {
+  color: var(--th-text-muted);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.reference-box strong {
+  color: var(--th-primary);
+
+  font-family: var(--font-mono);
+
+  font-size: 13px;
+
+  word-break: break-all;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.success-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.success-actions a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 0 22px;
+
+  border-radius: 8px;
+
+  font-family: var(--font-sans);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Primary */
+
+.success-actions a:first-child {
+  background: var(--th-primary);
+
+  color: #ffffff;
+}
+
+.success-actions a:first-child:hover {
+  background: var(--th-primary-dark);
+
+  transform: translateY(-1px);
+}
+
+/* Secondary */
+
+.success-actions a:last-child {
+  background: transparent;
+
+  color: var(--th-primary);
+
+  border: 1px solid var(--th-primary);
+}
+
+.success-actions a:last-child:hover {
+  background: var(--th-primary);
+
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .payment-success-container {
+    padding: 35px 18px 65px;
+  }
+
+  .payment-success-box {
+    padding: 40px 22px;
+  }
+
+  .success-icon {
+    width: 76px;
+    height: 76px;
+  }
+
+  .success-icon span {
+    font-size: 42px;
+  }
+
+  .payment-success-box h1 {
+    font-size: 34px;
+  }
+
+  .payment-success-box > p {
+    font-size: 14px;
+  }
+
+  .success-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .success-actions a {
+    width: 100%;
+  }
+}

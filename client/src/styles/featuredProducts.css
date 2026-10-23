@@ -1,0 +1,241 @@
+/* =========================================================
+   SECTION
+========================================================= */
+
+.featured-section {
+  width: 100%;
+
+  padding: 80px 24px 96px;
+
+  background-color: #fff8f4;
+
+  border-bottom: 1px solid rgba(30, 58, 47, 0.08);
+
+  color: #1e3a2f;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.featured-container {
+  width: 100%;
+  max-width: 1280px;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.featured-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 30px;
+
+  margin-bottom: 40px;
+}
+
+.featured-heading-group {
+  max-width: 720px;
+}
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.featured-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.featured-eyebrow-line {
+  width: 18px;
+  height: 2px;
+  background-color: #c85a32;
+  border-radius: 2px;
+}
+
+.featured-eyebrow-text {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #c85a32;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.featured-heading {
+  margin: 0 0 12px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--th-primary--dark);
+}
+
+.featured-description {
+  max-width: 650px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(30, 58, 47, 0.72);
+}
+
+/* =========================================================
+   EXPLORE ALL
+========================================================= */
+
+.featured-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 11px 18px;
+
+  background-color: #ffffff;
+
+  border: 1px solid rgba(30, 58, 47, 0.12);
+
+  border-radius: 8px;
+
+  color: #1e3a2f;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition: all 0.2s ease;
+}
+
+.featured-explore-btn:hover {
+  background-color: #1e3a2f;
+
+  border-color: #1e3a2f;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
+
+.featured-product-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 26px;
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.featured-empty {
+  grid-column: 1 / -1;
+
+  padding: 70px 20px;
+
+  text-align: center;
+
+  background-color: #ffffff;
+
+  border: 1px solid rgba(30, 58, 47, 0.1);
+
+  border-radius: 14px;
+}
+
+.featured-empty h3 {
+  margin: 0 0 8px;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: 24px;
+
+  color: #1e3a2f;
+}
+
+.featured-empty p {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: rgba(30, 58, 47, 0.55);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .featured-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .featured-section {
+    padding: 60px 18px 70px;
+  }
+
+  .featured-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    margin-bottom: 30px;
+  }
+
+  .featured-heading {
+    font-size: 34px;
+  }
+
+  .featured-description {
+    font-size: 14px;
+  }
+
+  .featured-explore-btn {
+    width: 100%;
+  }
+
+  .featured-product-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .featured-section {
+    padding: 50px 14px 60px;
+  }
+
+  .featured-heading {
+    font-size: 30px;
+  }
+}

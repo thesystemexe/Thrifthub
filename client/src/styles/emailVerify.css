@@ -1,0 +1,246 @@
+/* ================================
+   ThriftHub Theme - Email Verification Flow
+================================ */
+
+.reset-top-header {
+  padding: 24px 36px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.brand-logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-logo {
+  height: 36px;
+  width: 50px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-family: var(--font-serif, "Playfair Display", serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #171a19; /* Theme dark charcoal */
+  letter-spacing: -0.02em;
+}
+
+.verify-container {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #faf6f3; /* Theme base cream */
+  padding: 24px;
+  font-family: var(--font-sans, "Plus Jakarta Sans", sans-serif);
+}
+
+.verify-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e3dad3;
+  width: 100%;
+  max-width: 440px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #727a76;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+  color: #171a19;
+}
+
+/* Icon Wrapper - Forest Green Accent */
+.verify-icon-wrapper {
+  background: #eee6e0;
+  color: #07221b;
+  padding: 16px;
+  border-radius: 50%;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verify-title {
+  font-family: var(--font-serif, "Playfair Display", serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #171a19;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.verify-subtitle {
+  font-size: 0.875rem;
+  color: #727a76;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.user-email-highlight {
+  color: #171a19;
+  font-weight: 600;
+}
+
+/* Alerts */
+.alert {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.alert.error {
+  background-color: #fdf2f0;
+  color: #c9512c;
+  border: 1px solid #f5cfc6;
+}
+
+.alert.success {
+  background-color: #e8f4f0;
+  color: #07221b;
+  border: 1px solid #b3d7cc;
+}
+
+.verify-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* OTP Fields */
+.otp-inputs-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.otp-field {
+  width: 48px;
+  height: 56px;
+  border-radius: 8px;
+  border: 1px solid #e3dad3;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #171a19;
+  outline: none;
+  background-color: #faf6f3;
+  transition: all 0.2s ease;
+}
+
+.otp-field:focus {
+  border-color: #07221b;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(7, 34, 27, 0.08);
+}
+
+.otp-field.filled {
+  border-color: #8c9490;
+  background-color: #ffffff;
+}
+
+/* Primary Submit Button - Terracotta CTA */
+.submit-btn {
+  width: 100%;
+  height: 44px;
+  background-color: #c9512c;
+  color: #ffffff;
+  border: none;
+  border-radius: 22px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #b54320;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.resend-wrapper {
+  margin-top: 20px;
+  font-size: 0.875rem;
+  color: #727a76;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.resend-btn {
+  background: none;
+  border: none;
+  color: #c9512c;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+}
+
+.resend-btn:hover {
+  text-decoration: underline;
+}
+
+.timer-text strong {
+  color: #171a19;
+}
+
+/* Spinner Animation */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
